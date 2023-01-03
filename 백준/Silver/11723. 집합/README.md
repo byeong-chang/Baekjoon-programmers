@@ -1,6 +1,11 @@
 # [Silver V] 집합 - 11723 
 
 [문제 링크](https://www.acmicpc.net/problem/11723) 
+## 3회시도
+시간초과가 발생했음.
+1.파이썬 내장함수 input()을 sys.stdin.readline()으로 변경하여 해결.
+2.또한 입력부분에서 문자만 들어오는 경우와 문자,숫자 모두 들어오는 경우가 있었는데 (ex all , add 3 의 차이)
+text,num = sys.stdin.readline().split()이 아닌 text = sys.stdin.readline().split()로 저장하여 text[0]과 text[1]에 저장되는 데이터를 불러 사용하였음.
 
 ### 성능 요약
 
