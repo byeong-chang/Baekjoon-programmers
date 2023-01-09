@@ -2,6 +2,30 @@
 
 [문제 링크](https://www.acmicpc.net/problem/1463) 
 
+### 시도횟수 2회
+첫 시도는 문제 이해를 잘못한 부분에서 틀렸다.  
+당연히 나누기를 먼저하는 것이 빠르겠거니 접근했고, 그렇다고 해도 2로 나누는 경우를 1순위로 해야하지만 3으로 나눌경우를 1순위로 하는 코드를 작성하였다.   
+다시 풀어볼 때는 DP로 접근하여 문제를 해결했다.
+
+### 틀린코드
+```python
+import sys
+x = int(sys.stdin.readline())
+count =0
+while True:
+    if x%3 == 0 : 
+        x//=3
+        count+=1
+    else: break
+while True:
+    if x%2 == 0 : 
+        x//=2
+        count+=1
+    else: break
+count += (x-1)
+print(count)
+```
+
 ### 성능 요약
 
 메모리: 38732 KB, 시간: 692 ms
