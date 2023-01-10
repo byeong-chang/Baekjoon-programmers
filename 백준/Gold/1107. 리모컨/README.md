@@ -2,6 +2,47 @@
 
 [문제 링크](https://www.acmicpc.net/problem/1107) 
 
+### 7회 시도
+자리수 별로 시도해보려 했으나 모든 경우를 조사하지 못했다.
+알고리즘 방식이 brute force임을 확인했으나 이정도로 모든 경우를 조사할줄은 몰랐다..
+##### 틀린 코드
+```python
+mport sys
+N = sys.stdin.readline()
+N = N.rstrip()
+M = int(sys.stdin.readline())
+if M == 0:
+    print(len(N))
+    exit()
+error =list(map(int,sys.stdin.readline().split()))
+control = [0,1,2,3,4,5,6,7,8,9]
+for i in error:
+    del control[control.index(i)]
+count=0
+decimal = len(N)-1
+for i in N:
+    diff =1
+    if int(i) in control:
+        count +=1
+        decimal -=1
+    else: 
+        while True:
+            if int(i)+diff in control or  int(i) -diff in control:
+                if decimal ==0:
+                    count +=(diff+1)
+                    break
+                else: 
+                    count +=(diff*10**decimal+1)
+                    decimal -=1
+                    break
+            elif diff >=9:
+                count += (int(i)*10**decimal)
+                decimal -=1
+                break
+            else : diff +=1
+print(min(count,abs(int(N)-100)))
+```
+
 ### 성능 요약
 
 메모리: 30616 KB, 시간: 2172 ms
