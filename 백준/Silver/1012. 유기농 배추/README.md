@@ -2,6 +2,53 @@
 
 [문제 링크](https://www.acmicpc.net/problem/1012) 
 
+### 5회 시도
+
+문제점1. dx와 dy list를 만들어 해결하는 방법을 몰랐기에 if문을 여러개 사용하여 코드가 복잡해졌음.  
+문제점2. 풀이는 어느정도 DFS와 유사했으나 if 문을 사용했기에 4방향 모두 탐색한 것이 아니라 한방향만 탐색하고 지워진다는 문제점이 있었음.즉, DFS구현을 하지 못한것임.  
+문제점3. list를 입력최대치까지 만들어서 오류를 잡자는 무식한 생각을 했음... 정답 풀이는 입력받은 값 만큼의 index를 할당해주어 해결함.
+
+아직 branch and bound 형식의 BFS DFS 구현이 어렵다고 느낌 연습이 필요.
+
+##### 실패한 코드
+``` python
+import sys
+sys.setrecursionlimit(10**6)
+T = int(sys.stdin.readline())
+baechu_lst = []
+input_lst = []
+for i in range(51):
+    lst =[]
+    for j in range(51):
+        lst.append(0)
+    baechu_lst.append(lst)
+
+def search_everywhere(value):
+    if value[0] != M and baechu_lst[value[0]+1][value[1]] == 1:
+        search_everywhere([value[0]+1,value[1]])
+    elif value[1] != N and baechu_lst[value[0]][value[1]+1] == 1:
+        search_everywhere([value[0],value[1]+1])
+    elif value[0] !=0 and baechu_lst[value[0]-1][value[1]] == 1:
+        search_everywhere([value[0]-1,value[1]])
+    elif value[1] !=0 and baechu_lst[value[0]][value[1]-1] == 1:
+        search_everywhere([value[0],value[1]-1])
+    baechu_lst[value[0]][value[1]] = 0
+
+for i in range(T):
+    M,N,k = map(int,sys.stdin.readline().split())
+    for j in range(k):
+        x,y = map(int,sys.stdin.readline().split())
+        baechu_lst[x][y] = 1
+        input_lst.append([x,y])
+    count = 0
+    while len(input_lst) != 0:
+        if baechu_lst[input_lst[-1][0]][input_lst[-1][1]] == 1:
+            count += 1
+            search_everywhere(input_lst.pop())
+        else : input_lst.pop()
+    print(count)
+```
+
 ### 성능 요약
 
 메모리: 30784 KB, 시간: 56 ms
