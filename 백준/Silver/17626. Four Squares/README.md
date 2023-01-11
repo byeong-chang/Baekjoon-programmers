@@ -2,6 +2,11 @@
 
 [문제 링크](https://www.acmicpc.net/problem/17626) 
 
+### 3회시도 brute force or DP
+brute force는 개뿔 DP로 풀어도 시간초과 뜨는데...
+python3 말고 pypy3으로 실행하니 정상실행 되었다.
+문제 풀떄 DP임을 알아차렸지만 규칙을 찾지 못했고, brute force로 풀기에는 시간초과가 발생할 정도의 complexity로 보여서 DP 규칙을 고민하다 결국 검색해 구현했다.
+
 ### 성능 요약
 
 메모리: 116904 KB, 시간: 152 ms
