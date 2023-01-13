@@ -6,6 +6,8 @@
 
 메모리: 34372 KB, 시간: 208 ms
 
+### max heap에서 괄호만 바꿔 제출했다 ez
+
 ### 분류
 
 자료 구조(data_structures), 우선순위 큐(priority_queue)
