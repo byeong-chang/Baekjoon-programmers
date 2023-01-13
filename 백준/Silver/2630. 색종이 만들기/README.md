@@ -2,6 +2,9 @@
 
 [문제 링크](https://www.acmicpc.net/problem/2630) 
 
+### 1회시도
+보자마자 divide and conquer임을 알았고 수월하게 구현했다.
+
 ### 성능 요약
 
 메모리: 30616 KB, 시간: 44 ms
