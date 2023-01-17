@@ -6,3 +6,4 @@
 
 
 ### [Gold](https://github.com/byeong-chang/Baekjoon/tree/main/%EB%B0%B1%EC%A4%80/Gold)
+<span style='background-color':'#fff5B1'>벡터화 연산</span>
