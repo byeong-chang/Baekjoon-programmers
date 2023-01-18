@@ -2,6 +2,25 @@
 
 [문제 링크](https://www.acmicpc.net/problem/5525) 
 
+### 2회시도 
+서브테스크 문제였고, brute force로 접근하여 첫 시도에 50점을 맞아서 다시 풀게 되었다. 풀이법은 반복문 하나만 사용하여 
+bruteforce가 아닌 중간중간 뛰어 넘어 해결하면 complexity가 낮아져 맞는 풀이가 되었다.
+
+### 50점 코드
+import sys
+N = int(sys.stdin.readline())
+M = int(sys.stdin.readline())
+S = sys.stdin.readline()
+Pn = 'I'+'OI' *N
+str_len = len(Pn)
+S_len = len(S)
+count=0
+for i in range(S_len):
+    if S[i] =='I'and S_len - i >= str_len:
+        if S[i:i+str_len] == Pn:
+            count+=1
+print(count)
+
 ### 성능 요약
 
 메모리: 30616 KB, 시간: 36 ms
