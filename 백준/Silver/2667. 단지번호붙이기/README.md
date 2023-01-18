@@ -2,6 +2,13 @@
 
 [문제 링크](https://www.acmicpc.net/problem/2667) 
 
+#1회시도 BFS문제
+1.BFS 로 풀 수 있음. 
+visited 만들어서 처음 부터 싹 돌아그러면서 동시에 graph에 1이 있으면 
+그놈을 BFS돌려 돌리면서 visited찍고,
+연결된거 다돌면서 counting 후 list에 붙여준다. 그 후 전체 count 증가
+visited다 찍으면 종료
+
 ### 성능 요약
 
 메모리: 34124 KB, 시간: 60 ms
