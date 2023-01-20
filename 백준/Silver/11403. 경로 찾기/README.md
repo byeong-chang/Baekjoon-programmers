@@ -3,7 +3,7 @@
 [문제 링크](https://www.acmicpc.net/problem/11403) 
 
 ### 1회 시도  Floyd-Warshall알고리즘
-보자마자 graph의 floyd-warshall 알고림즈임을 알았고, 바로 구현도 했으나 사소한 조건에서 시간을 잡아먹어 20분정도나 걸린문제였다.
+보자마자 graph의 floyd-warshall 알고리즘임을 알았고, 바로 구현도 했으나 사소한 조건에서 시간을 잡아먹어 20분정도나 걸린문제였다.
 
 ### 성능 요약
 
