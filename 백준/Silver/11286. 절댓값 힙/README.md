@@ -11,7 +11,7 @@
 우선순위 큐를 구현하기 위해 mean heap에 대한 개념을 공부 한 후 python 라이브러리에서 import해와 사용해서 해결.
 
 min heap은 원소들이 항상 정렬된 상태로 추가되고, 삭제되며 가장 작은 값이 루트에 위치한다.  
-min heap내의 모든 원소는 자식원소들 보다 크기가 작거나 같도록 구현된다.
+min heap내의 모든 원소는 자식원소들 보다 크기가 작거나 같도록 구현된다.  
 ![image](https://user-images.githubusercontent.com/43203949/213870315-be6a937e-7fb3-4830-a203-bdcd51427d8b.png)
 
 ### 성능 요약
