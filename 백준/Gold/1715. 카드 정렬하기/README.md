@@ -3,8 +3,6 @@
 [문제 링크](https://www.acmicpc.net/problem/1715) 
 
 ### 1회 시도
-```python
-'''
 정렬하고 nlogn
 2개로 맞추고  1
 2개씩 묶어서 더해 n
@@ -18,7 +16,7 @@ Nlogn +N
 정렬되게끔 저장.          log n  
 ~ 
 minheap 사용하여 풀이함
-'''
+
 
 ### 성능 요약
 
