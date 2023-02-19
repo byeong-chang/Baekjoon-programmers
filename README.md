@@ -2,8 +2,7 @@
 
 
 [![Solved.ac
-프로필](http://mazassumnida.wtf/api/generate_badge?boj={handle})](https://solved.ac/profile/als6068)
-
+프로필](http://mazassumnida.wtf/api/v2/generate_badge?boj=als6068)](https://solved.ac/als6068)
 ### [Silver](https://github.com/byeong-chang/Baekjoon/tree/main/%EB%B0%B1%EC%A4%80/Silver) 
 
 
