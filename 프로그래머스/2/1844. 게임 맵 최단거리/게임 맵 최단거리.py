@@ -9,7 +9,9 @@ def solution(maps):
     yval = [0,0,-1,1]
     m,n = len(maps),len(maps[0])
     stack = [[0,0]]
+    count = 0
     while stack:
+        count+=1
         x,y = stack.pop(0)
         for i in range(4):
             dx = x + xval[i]
@@ -24,6 +26,7 @@ def solution(maps):
                     continue
                 else:
                     maps[dy][dx] = min(maps[dy][dx],maps[y][x]+1)
+    print(count)
     if maps[m-1][n-1] == 1:
         return -1
     else: return maps[m-1][n-1]
