@@ -1,0 +1,4 @@
+SELECT count(*) as USERS 
+# SELECT *
+FROM USER_INFO 
+WHERE AGE BETWEEN 20 and 29 and YEAR(joined) = "2021"
