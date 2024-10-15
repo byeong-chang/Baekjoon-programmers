@@ -1,0 +1,16 @@
+
+
+SELECT ID,EMAIL,FIRST_NAME,LAST_NAME
+FROM DEVELOPERS 
+WHERE LPAD(BIN(SKILL_CODE),32,0)
+        LIKE 
+        (SELECT REPLACE(LPAD(bin(CODE),32,0),0,"_")
+            FROM SKILLCODES
+            WHERE NAME = 'C#')
+        OR
+        LPAD(BIN(SKILL_CODE),32,0)
+        LIKE 
+        (SELECT REPLACE(LPAD(bin(CODE),32,0),0,"_")
+            FROM SKILLCODES
+            WHERE NAME = 'Python')
+ORDER BY ID
