@@ -11,7 +11,9 @@ def bruteForce(idx, total):
     
     if idx >= N:
         return
-    
+
+    bruteForce(idx+1, total)
+        
     total += data[idx]
 
     if total == S:
@@ -19,7 +21,6 @@ def bruteForce(idx, total):
     
     bruteForce(idx+1,total)
 
-    bruteForce(idx+1, total - data[idx])
 
 bruteForce(0,0)
 print(count)
