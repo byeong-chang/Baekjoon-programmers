@@ -1,27 +1,39 @@
 import sys
-N = int(sys.stdin.readline())
-paper_lst = [list(map(int,sys.stdin.readline().split())) for i in range(N)]
-blue_count = 0
-white_count = 0
-def color_check(x,y,length):
-    global blue_count,white_count
-    if length == 1:
-        if paper_lst[x][y] == 0:
-            white_count +=1
-        else: blue_count +=1
-        return
-    check = paper_lst[x][y]
-    for i in range(length):
-        for j in range(length):
-            if paper_lst[x+i][y+j] != check:
-                color_check(x,y,length//2)
-                color_check(x+length//2,y,length//2)
-                color_check(x,y+length//2,length//2)
-                color_check(x+length//2,y+length//2,length//2)
-                return
-    if check == 0:
-        white_count +=1
-    else: blue_count +=1
+def input():
+    return sys.stdin.readline().rstrip()
 
-color_check(0,0,N)
-print(white_count,blue_count,sep="\n")
+N = int(input())
+nums = [list(map(int,input().split())) for _ in range(N)]
+answer = {0:0,1:0}
+
+def check(count,x,y):
+    
+    start = nums[x][y]
+    flag = True
+    for i in range(count):
+        if not flag:
+            break
+
+        for j in range(count):
+            if nums[x+i][y+j] != start:
+                flag = False
+                break
+    if flag:
+        # 모두 같은색이라면 return
+        answer[start] +=1
+        return
+    
+    # 모두 같은색이 아니라면 잘라서 다시 실행
+    
+    count //=2
+    check(count,x,y)
+    check(count,x+count,y)
+    check(count,x,y+count)
+    check(count,x+count,y+count)
+
+check(N,0,0)
+
+print(answer[0])
+print(answer[1])
+    
+
